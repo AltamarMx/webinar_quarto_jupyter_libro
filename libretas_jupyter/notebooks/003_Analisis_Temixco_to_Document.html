@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Guillermo Barrios">
+<meta name="author" content="Unidad de Educación Continua">
+
+<title>Clima en Temixco, Morelos, México</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="003_Analisis_Temixco_to_Document_files/libs/clipboard/clipboard.min.js"></script>
+<script src="003_Analisis_Temixco_to_Document_files/libs/quarto-html/quarto.js"></script>
+<script src="003_Analisis_Temixco_to_Document_files/libs/quarto-html/popper.min.js"></script>
+<script src="003_Analisis_Temixco_to_Document_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="003_Analisis_Temixco_to_Document_files/libs/quarto-html/anchor.min.js"></script>
+<link href="003_Analisis_Temixco_to_Document_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="003_Analisis_Temixco_to_Document_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="003_Analisis_Temixco_to_Document_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="003_Analisis_Temixco_to_Document_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="003_Analisis_Temixco_to_Document_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#analisis-de-clima-en-temixco-morelos-méxico" id="toc-analisis-de-clima-en-temixco-morelos-méxico" class="nav-link active" data-scroll-target="#analisis-de-clima-en-temixco-morelos-méxico">Analisis de clima en Temixco, Morelos, México</a>
+  <ul class="collapse">
+  <li><a href="#temperatura-ambiente-horaria" id="toc-temperatura-ambiente-horaria" class="nav-link" data-scroll-target="#temperatura-ambiente-horaria">Temperatura ambiente horaria</a></li>
+  <li><a href="#temperaturas-máximas-diarias-y-energía-solar-diaria" id="toc-temperaturas-máximas-diarias-y-energía-solar-diaria" class="nav-link" data-scroll-target="#temperaturas-máximas-diarias-y-energía-solar-diaria">Temperaturas máximas diarias y energía solar diaria</a></li>
+  <li><a href="#rosa-de-vientos-para-temixco-morelos" id="toc-rosa-de-vientos-para-temixco-morelos" class="nav-link" data-scroll-target="#rosa-de-vientos-para-temixco-morelos">Rosa de vientos para Temixco, Morelos</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Clima en Temixco, Morelos, México</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autorxs</div>
+    <div class="quarto-title-meta-contents">
+             <p>Guillermo Barrios </p>
+             <p>Unidad de Educación Continua </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> iertools.read <span class="im">import</span> read_epw</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.dates <span class="im">as</span> mdates</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> calplot</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.ticker <span class="im">as</span> ticker</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> windrose <span class="im">import</span> WindroseAxes</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'../notebooks/enerdata_rectangle.mplstyle'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="analisis-de-clima-en-temixco-morelos-méxico" class="level1">
+<h1>Analisis de clima en Temixco, Morelos, México</h1>
+<section id="temperatura-ambiente-horaria" class="level2">
+<h2 class="anchored" data-anchor-id="temperatura-ambiente-horaria">Temperatura ambiente horaria</h2>
+<p>La temperatura en Temixco puede ir de alrededor los 10 <span class="math inline">\(^oC\)</span> a los 35 <span class="math inline">\(^oC\)</span> durante todo el año, como se ve en la <a href="#fig-to-anual">Figura&nbsp;1</a>. La temperatura anual promedio en Temixco es <code>{python} promedio.round(1)</code>.</p>
+<div class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div id="fig-to-anual" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="003_Analisis_Temixco_to_Document_files/figure-html/fig-to-anual-output-1.png" width="811" height="263" class="figure-img"></p>
+<figcaption class="figure-caption">Figura&nbsp;1: Temperatura ambiente en Temixco, Morelos</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="temperaturas-máximas-diarias-y-energía-solar-diaria" class="level2">
+<h2 class="anchored" data-anchor-id="temperaturas-máximas-diarias-y-energía-solar-diaria">Temperaturas máximas diarias y energía solar diaria</h2>
+<p>Las máximas temperaturas se presentan entre los meses de abril y mayo, como se puede ver en la <a href="#fig-to-max">Figura&nbsp;2</a>. Es en julio y agosto cuando se tiene la mayor radiación solar en el año, como se ve en la <a href="#fig-ig">Figura&nbsp;3</a>.</p>
+<div class="cell" data-execution_count="6">
+<div class="cell-output cell-output-stderr">
+<pre><code>findfont: Font family 'Helvetica' not found.
+findfont: Font family 'Helvetica' not found.
+findfont: Font family 'Helvetica' not found.
+findfont: Font family 'Helvetica' not found.
+findfont: Font family 'Helvetica' not found.
+findfont: Font family 'Helvetica' not found.
+findfont: Font family 'Helvetica' not found.
+findfont: Font family 'Helvetica' not found.</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div id="fig-to-max" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="003_Analisis_Temixco_to_Document_files/figure-html/fig-to-max-output-2.png" width="1024" height="154" class="figure-img"></p>
+<figcaption class="figure-caption">Figura&nbsp;2: Temperaturas máximas diarias en Temixco, Morelos</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cal, cax <span class="op">=</span>calplot.calplot(tmx.Ig.resample(<span class="st">'D'</span>).<span class="bu">sum</span>()<span class="op">*</span><span class="dv">1</span><span class="op">/</span><span class="dv">6</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                          linewidth<span class="op">=</span><span class="dv">0</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                          cmap<span class="op">=</span><span class="st">'jet'</span>,colorbar<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                          vmin<span class="op">=</span><span class="dv">1000</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                          vmax<span class="op">=</span><span class="dv">9000</span>)<span class="op">;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>cal.axes[<span class="dv">0</span>].set_title(<span class="st">'Irradiancia $Wh/m^2$'</span>)<span class="op">;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_func(x, pos):</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f'</span><span class="sc">{</span>x<span class="sc">:,</span><span class="fl">.0</span><span class="er">f</span><span class="sc">}</span><span class="ss">'</span>  <span class="co"># Añade separadores de miles, sin decimales</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Usa FuncFormatter con la función de formato definida anteriormente</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>formatter <span class="op">=</span> ticker.FuncFormatter(format_func)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplica el formatter al colorbar</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>cax <span class="op">=</span> plt.gcf().axes[<span class="op">-</span><span class="dv">1</span>]  <span class="co"># Asumiendo que el colorbar es el último eje añadido</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>cax.yaxis.set_major_formatter(formatter)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>findfont: Font family 'Helvetica' not found.
+findfont: Font family 'Helvetica' not found.
+findfont: Font family 'Helvetica' not found.
+findfont: Font family 'Helvetica' not found.
+findfont: Font family 'Helvetica' not found.
+findfont: Font family 'Helvetica' not found.
+findfont: Font family 'Helvetica' not found.
+findfont: Font family 'Helvetica' not found.</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div id="fig-ig" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="003_Analisis_Temixco_to_Document_files/figure-html/fig-ig-output-2.png" width="1045" height="175" class="figure-img"></p>
+<figcaption class="figure-caption">Figura&nbsp;3: Energía solar diaria (<span class="math inline">\(Wh/m^2\)</span>) en Temixco, Morelos</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="rosa-de-vientos-para-temixco-morelos" class="level2">
+<h2 class="anchored" data-anchor-id="rosa-de-vientos-para-temixco-morelos">Rosa de vientos para Temixco, Morelos</h2>
+<p>La estación meteorológica se encuentra ubicada en el Instituto de Energías Renovables de la UNAM, y la orografía de ese sitio causa que la dirección dominante del viento cambie durante el día y la noche. En el día los vientos dominantes tienen una dirección de Sur a Norte como se ve en la <a href="#fig-windrose-1">Figura&nbsp;4 (a)</a> y de Norte a Sur, como se ve en la <a href="#fig-windrose-2">Figura&nbsp;4 (b)</a>.</p>
+<div id="fig-windrose" class="cell quarto-layout-panel" data-execution_count="8">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-windrose-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="003_Analisis_Temixco_to_Document_files/figure-html/fig-windrose-output-1.png" class="img-fluid figure-img" data-ref-parent="fig-windrose"></p>
+<figcaption class="figure-caption">(a) Día</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-windrose-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="003_Analisis_Temixco_to_Document_files/figure-html/fig-windrose-output-2.png" class="img-fluid figure-img" data-ref-parent="fig-windrose"></p>
+<figcaption class="figure-caption">(b) Noche</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figura&nbsp;4: Dirección y magnitud del viento para Temixco, Morelos.</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

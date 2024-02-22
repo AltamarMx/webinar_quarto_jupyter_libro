@@ -1,0 +1,24 @@
+project:
+  type: book
+
+book:
+  title: "Analisis del clima en Temixco"
+  author: "Guillermo Barrios del Valle"
+  date: "2/20/2024"
+  chapters:
+    - prefacio.qmd
+    - index.qmd
+    - windrose.qmd
+    - referencias.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+lang: es
+
+
+

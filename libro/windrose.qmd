@@ -1,0 +1,6 @@
+# Rosa de vientos para Temixco, Morelos
+
+La estación meteorológica se encuentra ubicada en el Instituto de Energías Renovables de la UNAM, y la orografía de ese sitio causa que la dirección dominante del viento cambie durante el día y la noche. En el día los vientos dominantes tienen una dirección de Sur a Norte como se ve en la @fig-windrose-1 y de Norte a Sur, como se ve en la @fig-windrose-2.
+
+
+{{< embed 003_Analisis_Temixco_to_Document.ipynb#fig-windrose >}}

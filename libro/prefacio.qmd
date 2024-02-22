@@ -1,0 +1,5 @@
+# Prefacio {.unnumbered}
+
+Este es un documento de Quarto para ser publicado en formato HTML.
+
+Para aprender más, visita <https://quarto.org/docs/books>.

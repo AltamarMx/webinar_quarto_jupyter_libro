@@ -1,0 +1,46 @@
+# Callouts y figuras
+En este capítulo veremos como lanzar advertencias, y lo más importante, como insertar figuras desde una libreta previamente construida.
+
+## Callouts?
+
+
+See @knuth84 for additional discussion of literate programming.
+
+```{.bash filename="LaTeX"}
+quarto install tinytex
+```
+
+::: {.callout-note}
+Hay cinco tipos de call-outs:
+`note`, `warning`, `important`, `tip`, and `caution`.
+:::
+
+::: {.callout-tip}
+## Tip with Title
+
+This is an example of a callout with a title.
+:::
+
+::: {.callout-caution collapse="true"}
+## Expand To Learn About Collapse
+
+This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
+
+
+## Figuras desde una libreta
+
+
+
+La temperatura en Temixco puede ir de alrededor los 10 $^oC$ a los 35 $^oC$ durante todo el año, como se ve en la @fig-to-anual. La temperatura anual promedio en Temixco es `{python} promedio.round(1)`.
+
+{{< embed 003_Analisis_Temixco_to_Document.ipynb#fig-to-anual >}}
+
+
+## Temperaturas máximas diarias y energía solar diaria
+
+Las máximas temperaturas se presentan entre los meses de abril y mayo, como se puede ver en la @fig-to-max. Es en julio y agosto cuando se tiene la mayor radiación solar en el año, como se ve en la @fig-ig.
+
+{{< embed 003_Analisis_Temixco_to_Document.ipynb#fig-to-max >}}
+
+{{< embed 003_Analisis_Temixco_to_Document.ipynb#fig-ig >}}

@@ -1,0 +1,373 @@
+---
+title: "Quarto para la ciencia de datos y academia "
+author: Guillermo Barrios del Valle
+format: 
+    revealjs: 
+        footer: G. Barrios | Quarto para la ciencia de datos
+        incremental: true
+institute: Instituto de Energías Renovables, UNAM
+toc: false
+toc-title: Contenido
+lang: es
+link-external-newwindow: true
+---
+
+## Agradecimientos
+```{python}
+
+from wordcloud import WordCloud, STOPWORDS
+import matplotlib.pyplot as plt
+import pandas as pd
+
+comment_words = '''
+UEC 
+IER-UNAM 
+Grecia Suárez
+Aaron Pérez
+UEC 
+IER-UNAM 
+Grecia Suárez
+Aaron Pérez
+UEC 
+IER-UNAM 
+Grecia Suárez
+Grecia Suárez
+Grecia Suárez
+Grecia Suárez
+Aaron Pérez
+Jesus Capistran
+Aldo Cortés Contreras 
+Angélica Lizbeth Espinosa Santana
+Néstor Manuel Ortiz Rodríguez 
+Arturo Valencia Quiroz
+Michelle Arredondo Espinoza 
+Eduardo González Recio
+Benjamín Santamaría Beltrán 
+Fernando Ibarguengoytia 
+Esdras Josué Calvo Ramírez
+Jaquelina Camacho Cáceres 
+Karen Jazmín Galicia Alarcón 
+Sebastian Alberto Reyes Romero
+Jorge de la Vega Góngora
+Eder Rodrigo Zúñiga Cruz
+Ana Laura Córdova Lara
+Nazli Michelle Alcántara Zárate 
+Isabel Ortiz Jiménez 
+Erick Axel Popoca López
+Aurea Vivianne Mora Rodríguez
+Itzayana Shadani Cruz Luis
+Saúl Cazares García 
+María del Carmen Huerta Reynoso
+ANGEL ZAREK VELAZQUEZ VELAZQUEZ
+DIANA LOPEZ LOPEZ
+Juan Carlos Rangel
+Victoria Alejandra Cevallos Luzuriaga 
+FABIOLA MENDEZ ARRIAGA
+José Luis Colorado Hernández
+Mariana Guadalupe Cacho Aldaco
+Fidel Roberto Castellanos Duran
+Andrea Amador Pérez
+Uriel Arizmendi Chavez 
+Roger Enrique Pool Canul
+Luis Miguel de la Cruz Salas
+Yarimeth ameyalli Alarcón Altamirano 
+jhon jairo espinosa
+Diego Arturo Canul Reyes
+Dulce Ivonne Zuñiga Casillas 
+Cynthia Gonzalez Barajas 
+Clemente Cruz Atenogenes 
+Benjamín Santamaría Beltrán
+Alejandro León Mendoza 
+Sebastian Alberto Reyes Romero
+Evelyn Lizeth Pedroza Moreno 
+Luz Elena Moreyra González
+Marisol Hernández Gutiérrez 
+Victor saul inga cruz 
+Ma. de Jesus Perez Orozco
+Daynahi franco pelaez 
+Janet Ramírez Márquez 
+Rodrigo Vivar Ocampo 
+Roberto Mendoza Martínez
+Irving Galindo Márquez 
+CRUZ VALERIA GÓMEZ GARCÍA 
+Alyn Castaño González
+Juliana isabel saucedo Velazquez 
+Edison Geovanny Fonseca Cuenca 
+Melvia Carinne Mejía Vázquez 
+José Antonio Mis Martín 
+Julieta Landa Bautista 
+Carlos Alberto López Villalobos 
+Cristina Nieto Vasconcelos
+Vianey Ximena Martínez Vite 
+Jenifer Ccorimanya Ttica 
+Sabrina Contreras
+Corín Ramírez Díaz 
+Karen. Lopez 
+Liliana Sandoval Arredondo
+Marcos Palacios Bonilla 
+FRANCISCO JAVIER PALOMARES TORRES
+Damaris Georgina Aguilar Samaniego 
+JORGE ESGUIBEZ MEJIA
+Fernando Ibarguengoytia Arias 
+Sotsil Silva Sotelo 
+Emmanuel Hiram Hernández Arias
+Paola Gabriela Abrego Martínez 
+Alejandro Javier Mancilla Rico 
+Ezequiel 
+Francisco Almonacid Buenrostro
+Natalie Ortiz-Guerrero 
+Diana Patricia Sandoval Hernandez 
+Dan Jesús Salgado García 
+Oswaldo Raúl García Ibarra 
+Franco Peláez Kennedy 
+Nazli Michelle Alcántara Zárate 
+Héctor Jiménez Cruz 
+Luis Abraham Aguilar Ruiz
+Edgar Berdeja Rocha
+Giovanni Octavio Hernández Uribe 
+Jessica Raquel Méndez Ortiz 
+José Ramón Hernández Aguilar 
+Luis Roberto Pérez Marcelin 
+Natalia Correa Solis 
+Richardson
+Robenson JEAN
+Mayra Janet Leyva Sanchez 
+Carlos San Miguel Crisantos 
+Sebastian Alberto Reyes Romero
+Jorge Luis Mendez Reyna
+René Hernández Vicente
+Andrés Vázquez Montesinos 
+Brandon Ignacio Álvarez Morales
+Juana Isabel Giron 
+César Antonio Ponce Diego
+Guadalupe Moreno Quintanar
+Wendy Ivone García Garcia
+Nohemi Evangelina Quispe Ponce
+Sarah Ruth Messina Fernández
+Byron Montenegro
+Jhon Jairo Espinosa Cardozo
+Roberto Carlos Magaña González
+Carlos Yebra Montes
+Dorian Sandoval 
+Mario Miguel villarreal hernandez 
+Anthony Jair Hernandez Bautista
+Leonardo Velázquez Zúñiga 
+Juan Alberto Gaspar 
+Luis Miguel Sánchez 
+Joles Jean
+Delmer Gómez Heleria 
+Luis Antonio Rodríguez Chávez
+Harumi Moreno Garcia
+Cesar Alejandro Piña Diaz
+Luis Mario Federico Alcantar
+Daniel Castañeda Vargas 
+Ofir Lailani Álvarez Benítez
+Pedro Navarrete Flores
+Alejandro Mojica 
+Edgar Versañez Ocampo
+Iván Emmanuel Velázquez Adán
+Daniel Pedroza Adan 
+DANIEL PEDROZA ADAN 
+Joel Morales Chigo
+José Luis Morón Cruz 
+Alejandro Bautista Orozco
+Angélica Lizbeth Espinosa Santana
+Rafael Carmona
+Carlos Leonardo Velázquez Zúñiga
+Sophia Gómez  Sánchez 
+Brandon Bueno Hernández 
+Xochitl Corona Morales 
+Miriam Veronica Cruz Salas
+Luis Enrique López Morales 
+José María Aguilar Mier
+Jorge Chavarría Ornelas
+Martha Viridiana Morales Gallardo
+José Ortega Cruz
+Orlando Castro Ocampo
+Fernando Hernández Ramírez
+David Israel Negrete Mata
+Atalia Gomez Cortez
+Jimenez Chavarria Brandon David
+Magali Yazmin Galicia Ortiz
+'''
+wordcloud = WordCloud(width = 600, height = 600,
+				background_color ='white',
+				stopwords = STOPWORDS,
+				min_font_size = 8,
+                relative_scaling=1).generate(comment_words)
+
+# plot the WordCloud image					 
+fig, ax = plt.subplots(figsize = (8, 8), facecolor = None)
+ax.imshow(wordcloud)
+ax.axis('off');
+
+```
+
+## ¿Para quién es esta charla?
+- $\LaTeX$ 
+- Jupyter notebook, R
+- Libro, tesis, artículos
+- Ciencia de datos
+
+## ¿Qué es Quarto?
+
+Sistema de publicación técnico y científico abierto.
+
+- __Libretas de Jupyter__
+- Incluir código en Python, R, Julia...
+- Publicar artículos, presentaciones, tableros, sitios web, blogs, __libros__ en formato HTML, PDF, MS Word, ePub ...
+- Propicia la documentación y documentos reproducibles
+- Ecuaciones, citas, referencias cruzadas, figuras, código fácil de copiar, advertencias, maquetado ...
+
+
+## El PDF
+
+- Sólo para imprimirse
+- Documentos estáticos 
+- No optimizados para verse en celulares, tabletas, navegadores
+- Navegación limitada
+- No publicable en www
+- No actualizables
+
+
+## ¿Cómo se ve un libro en Quarto?
+
+<br>
+
+<br>
+
+<br>
+
+[Python for Data Analysis](https://wesmckinney.com/book/accessing-data/)
+
+
+
+## ¿Cómo se ve un artículo en PDF?
+
+<br>
+
+<br>
+
+<br>
+
+[A Quarto Page Layout Example](https://quarto-dev.github.io/quarto-gallery/page-layout/tufte.pdf)
+
+
+
+## Historia de Quarto 
+
+- RStudio, 2009
+- R Markdown
+    - Ejecutar código
+    - Escribir ecuaciones
+    - Conecta código con reportes
+- RStudio se transforma en POSIT 2021
+- Quarto 2022
+    - Evolución de R Markdown, Knitr
+    - Integra Python, Jupyter notebooks
+
+
+## ¿Cuál es el plan?
+
+
+<br>
+
+1. Instalar Python
+1. Instalar Quarto
+1. Instalar-configurar IDE (VSCode)
+1. Convertir una libreta Jupyter a documento
+1. Iniciar un proyecto de libro-tesis
+
+
+
+## Instala Python y paquetes
+
+![[Python](https://python.org/)](img/install_python.jpeg)
+
+## Instala Quarto
+
+![[Quarto](https://quarto.org/)](img/install_quarto.jpeg)
+
+## Instala Visual Studio Code
+
+
+![[https://code.visualstudio.com/](https://code.visualstudio.com/)](img/install_vscode.jpeg)
+
+
+
+## Instala Quarto extension para VSCode
+
+![Quarto extension](img/quarto_extension.jpeg)
+
+## Configura Quarto extension para VSCode
+
+![Quarto extension configuración](img/quarto_extension_settings.jpeg)
+
+## Configura render on save
+
+![Render on save](img/render_save.jpeg)
+
+
+## Tiempo de instalar
+
+![Preguntas](img/questions_large.png)
+
+
+## Descarga el repositorio
+
+```{.html title="Navegador"}
+https://github.com/AltamarMx/webinar_quarto_jupyter_libro
+```
+![[](https://github.com/AltamarMx/webinar_quarto_jupyter_libro)](img/repo_webinar.jpeg)
+
+
+## A la libreta de Jupyter
+
+
+## Jupyter 001
+
+
+```{.bash filename="Terminal"}
+quarto preview  002_Analisis_Temixco_to_Document.ipynb
+```
+
+
+## Jupyter 002
+
+
+```{.bash filename="Terminal"}
+quarto render  002_Analisis_Temixco_to_Document.ipynb
+```
+![](img/quarto_render_libreta.jpeg)
+
+
+## Jupyter 003
+
+
+```{.bash filename="Terminal"}
+quarto render  002_Analisis_Temixco_to_Document.ipynb --to pdf
+```
+![](img/quarto_render_pdf.jpeg)
+
+
+## Jupyter 004
+
+
+```{.bash filename="Terminal"}
+quarto render  002_Analisis_Temixco_to_Document.ipynb --to docx
+```
+![](img/quarto_render_docx.jpeg)
+
+
+## Preguntas sobre Jupyter notebooks
+
+![Notebooks](img/questions_large.png)
+
+## A escribir una tesis/libro
+
+![Writing](img/writing_thesis.jpg)
+
+
+## Preguntas sobre tesis/libro
+
+![](img/questions_phd.jpg)
